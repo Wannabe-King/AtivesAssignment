@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:sityappandativesassessment/createProfile.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -115,7 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RegisterPage(),
+                        builder: (context) => CreateProfilePage(),
                       ));
                 },
                 child: Container(
