@@ -54,7 +54,28 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(50)),
                   child: GestureDetector(
-                      onTap: () => AlertDialog(),
+                      onTap: () => showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: Text("continue as"),
+                              content: Container(
+                                height: 100,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Icon(Icons.camera,
+                                        size: 48.0, color: Color(0xff3159A6)),
+                                    VerticalDivider(
+                                      color: Colors.black,
+                                    ),
+                                    Icon(Icons.image,
+                                        size: 48.0, color: Color(0xff3159A6)),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
                       child: Icon(
                         Icons.add_a_photo_outlined,
                         size: 40,
