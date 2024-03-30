@@ -3,16 +3,15 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:sityappandativesassessment/registerPage.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,12 +81,22 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              
+              SizedBox(
+                height: 10,
+              ),
               Container(
-                padding: EdgeInsets.only(top: 5),
-                alignment: Alignment.topLeft,
-                child: const Text(
-                  "Forgot Password ?",
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: "Enter Password",
+                    border: InputBorder.none,
+                    labelText: "Password",
+                    suffixIcon: Icon(Icons.visibility),
+                  ),
                 ),
               ),
               SizedBox(
@@ -106,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginPage(),
+                        builder: (context) => RegisterPage(),
                       ));
                 },
                 child: Container(
@@ -117,36 +126,12 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(10)),
                   child: const Center(
                     child: Text(
-                      "SignIn",
+                      "Register",
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Don't have an account ? ",
-                    style: TextStyle(fontSize: 14),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RegisterPage()));
-                    },
-                    child: Text(
-                      "Register Now",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xff3159A6)),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),

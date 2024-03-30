@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sityappandativesassessment/getStarted.dart';
+import 'package:sityappandativesassessment/loginPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.poppinsTextTheme(),
         useMaterial3: true,
       ),
-      home: GetStartedPage(),
+      home: LoginPage(),
     );
   }
 }
